@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth.js';
 
 const Navbar = () => {
-  const { logOut, user } = useAuth();
+  const { authStatus, toLogOut } = useAuth();
   const { t } = useTranslation();
 
   return (
     <BootstrapNavbar bg='white' expand='lg' className='shadow-sm'>
       <div className='container'>
         <BootstrapNavbar.Brand as={Link} to='/'>{t('Home')}</BootstrapNavbar.Brand>
-        {!!user && <Button onClick={logOut}>{t('logout')}</Button>}
+        {authStatus && <Button onClick={toLogOut}>{t('logout')}</Button>}
       </div>
     </BootstrapNavbar>
   );
