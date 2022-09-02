@@ -15,7 +15,7 @@ plugins:
   - react
 rules: 
   import/extensions: 0
-  no-consoe: 0
+  no-console: 0
   react/prop-types: 0
   no-param-assign: 0
 settings:
