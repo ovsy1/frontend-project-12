@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={authStatus ? <Chat /> : <Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFoundPage />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
