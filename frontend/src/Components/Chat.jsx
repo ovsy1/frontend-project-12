@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Home() {
+function Chat() {
   return (
     <h1>Hello home</h1>
   );
 }
-export default Home;
+export default Chat;
