@@ -2,24 +2,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import * as yup from 'yup';
 import { toast } from 'react-toastify';
+
+import validationForm from '../helpers/validation.js';
 import routes from '../routes.js';
 import useAuth from '../hooks/useAuth.js';
 
 function Login() {
-  const auth = useAuth();
+  const { toLogin } = useAuth();
   const { t } = useTranslation();
   const [authFailed, setAuthFailed] = useState(false);
   const inputRef = useRef();
-  const location = useLocation();
   const navigate = useNavigate();
-  const validation = yup.object({
-    username: yup.string().trim().required(t('loginErr')),
-    password: yup.string().required(t('loginErr')),
-  });
+  const { loginForm } = validationForm();
+
   useEffect(() => {
     inputRef.current.focus();
   }, []);
@@ -28,17 +26,15 @@ function Login() {
       username: '',
       password: '',
     },
-    validationSchema: validation,
+    validationSchema: loginForm,
     onSubmit: async (values) => {
       setAuthFailed(false);
       try {
         const res = await axios.post(routes.loginPath(), values);
-        console.log(res, res.data);
-        auth.logIn(res.data);
-        const { from } = location.state || { from: { pathname: routes.chatPagePath() } };
-        navigate(from);
+        toLogin(res.data);
+        navigate('/');
       } catch (error) {
-        console.log(error);
+        console.error(error);
         if (!error.isAxiosError) {
           toast.error(t('errors.unknown'));
           return;
