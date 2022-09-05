@@ -10,6 +10,12 @@ function AuthContextProvider({ children }) {
     return !!token;
   };
 
+  const getHeader = {
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  };
+
   const [authStatus, setAuthStatus] = useState(isAuthorized());
   const toLogIn = ({ username, token }) => {
     localStorage.setItem('token', token);
@@ -31,6 +37,7 @@ function AuthContextProvider({ children }) {
       toLogOut,
       getUser,
       getToken,
+      getHeader,
     }
     }>{children}
     </AuthContext.Provider>
