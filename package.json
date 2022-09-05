@@ -2,6 +2,9 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "17.x"
+  },
   "description": "react app slack chat",
   "main": "frontend/src/index.jsx",
   "scripts": {
