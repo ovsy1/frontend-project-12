@@ -6,9 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import validationForm from '../helpers/validation.js';
-import avatarImages from '../assets/signup.jpg';
+import avatarImages from '../images/signup.jpg';
 import routes from '../routes.js';
-import useAuth from '../hooks/useAuth.js';
+import { useAuth } from '../hooks/useAuth.js';
 
 function SignUp() {
   const [registrationFailed, setRegistrationFailed] = useState(false);

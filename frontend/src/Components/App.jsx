@@ -5,7 +5,7 @@ import Chat from './Chat.jsx';
 import Login from './Login.jsx';
 import NotFoundPage from './NotFoundPage.jsx';
 import Navbar from './Navbar.jsx';
-import useAuth from '../hooks/useAuth.js';
+import { useAuth } from '../hooks/useAuth.js';
 import SignUp from './SignUp.jsx';
 
 function App() {
@@ -23,3 +23,5 @@ function App() {
     </>
   );
 }
+
+export default App;

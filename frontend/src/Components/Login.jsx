@@ -8,16 +8,16 @@ import { toast } from 'react-toastify';
 
 import validationForm from '../helpers/validation.js';
 import routes from '../routes.js';
-import useAuth from '../hooks/useAuth.js';
+import { useAuth } from '../hooks/useAuth.js';
+import avatarImages from '../images/login.jpg';
 
 function Login() {
-  const { toLogin } = useAuth();
+  const { toLogIn } = useAuth();
   const { t } = useTranslation();
   const [authFailed, setAuthFailed] = useState(false);
   const inputRef = useRef();
   const navigate = useNavigate();
   const { loginForm } = validationForm();
-
   useEffect(() => {
     inputRef.current.focus();
   }, []);
@@ -31,7 +31,7 @@ function Login() {
       setAuthFailed(false);
       try {
         const res = await axios.post(routes.loginPath(), values);
-        toLogin(res.data);
+        toLogIn(res.data);
         navigate('/');
       } catch (error) {
         console.error(error);
