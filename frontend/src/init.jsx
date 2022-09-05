@@ -4,9 +4,8 @@ import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-
 import AuthContextProvider from './context/AuthContext/AuthContextProvider.jsx';
-import SocketContextProvider from './context/SocketContextProvider.jsx';
+import SocketContextProvider from './context/SocketContext/SocketContextProvider.jsx';
 import store from './store/store.js';
 import languages from './locales/index.js';
 import App from './Components/App.jsx';
