@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import validationForm from '../../helpers/validation.js';
+import validationForm from '../../../helpers/validation.js';
 
 function AddModalForm({ setShowModal }) {
   // eslint-disable-next-line no-unused-vars
