@@ -25,7 +25,10 @@ const chatsSlice = createSlice({
       currentChannel: action.payload,
     }),
     addMessage: (state, action) => {
-      state.messages.push(action.payload);
+      const filtered = state.messages.map((i) => i.id);
+      if (!filtered.includes(action.payload.id)) {
+        state.messages.push(action.payload);
+      }
     },
   },
   extraReducers: (builder) => {
