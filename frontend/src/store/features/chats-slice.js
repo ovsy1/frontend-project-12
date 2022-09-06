@@ -20,15 +20,40 @@ const chatsSlice = createSlice({
   name: '@@chats',
   initialState,
   reducers: {
-    setActiveChannel: (state, action) => ({
-      ...state,
-      currentChannel: action.payload,
-    }),
+    setActiveChannel: (state, action) => {
+      state.currentChannel = action.payload;
+    },
     addMessage: (state, action) => {
       const filtered = state.messages.map((i) => i.id);
       if (!filtered.includes(action.payload.id)) {
         state.messages.push(action.payload);
       }
+    },
+    addChannel: (state, action) => {
+      const filtered = state.channels.map((i) => i.id);
+      if (!filtered.includes(action.payload.id)) {
+        state.channels.push(action.payload);
+        state.currentChannel = action.payload.id;
+      }
+    },
+    removeChannel: (state, action) => {
+      const channellList = state.channels.filter((channel) => channel.id !== action.payload.id);
+      if (state.currentChannel === action.payload.id) {
+        state.currentChannel = 1;
+      }
+      const messageList = state.messages.filter((m) => m.channelId !== action.payload.id);
+      state.channels = channellList;
+      state.messages = messageList;
+    },
+    renameChannel: (state, action) => {
+      const channellList = state.channels.map((channel) => {
+        if (channel.id === action.payload.id) {
+          channel.name = action.payload.name;
+          return channel;
+        }
+        return channel;
+      });
+      state.channels = channellList;
     },
   },
   extraReducers: (builder) => {
@@ -52,6 +77,9 @@ const chatsSlice = createSlice({
   },
 });
 
-export const { setActiveChannel, addMessage } = chatsSlice.actions;
+export const {
+  setActiveChannel, addMessage, addChannel, removeChannel, renameChannel,
+} = chatsSlice.actions;
+
 const chatsReducer = chatsSlice.reducer;
 export default chatsReducer;
