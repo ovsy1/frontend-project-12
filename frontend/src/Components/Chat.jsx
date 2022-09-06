@@ -1,4 +1,4 @@
-import React, { useEffects } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 
@@ -14,7 +14,7 @@ function Chat() {
 
   const { getHeader } = useAuth();
 
-  useEffects(() => {
+  useEffect(() => {
     dispatch(loadChats(getHeader));
   }, []);
 
