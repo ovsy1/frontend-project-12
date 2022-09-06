@@ -11,7 +11,7 @@ const startChat = async () => {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   const vdom = await init(socket);
 
-  root.render(<React.StrictMode>{vdom}</React.StrictMode>);
+  root.render(<>{vdom}</>);
 };
 
 startChat();
