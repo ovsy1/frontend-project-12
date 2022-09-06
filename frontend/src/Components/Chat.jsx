@@ -19,11 +19,11 @@ function Chat() {
   }, []);
 
   return (
-    <Container className="h-100 my-4 overflow-hidden rounded shadow">
+    <Container className="container h-100 my-4 overflow-hidden rounded shadow">
       {error && <h2>{error}</h2>}
       {status === 'loading' && <Loader />}
       {status === 'received' && (
-        <Row>
+        <Row className='h-100 bg-white flex-md-row'>
           <Channels />
           <Messages />
         </Row>

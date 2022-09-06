@@ -12,7 +12,7 @@ function App() {
   const { authStatus } = useAuth();
 
   return (
-    <>
+    <div className='d-flex flex-column h-100'>
       <Navbar/>
       <Routes>
         <Route path='/' element={authStatus ? <Chat /> : <Login />} />
@@ -20,7 +20,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
