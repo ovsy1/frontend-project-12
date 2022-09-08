@@ -37,7 +37,8 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
           variant={buttonStyle}
           onClick={() => dispatch(setActiveChannel(id))}
         >
-          <span># </span>
+          <span>#</span>
+          {' '}
           {name}
         </Button>
         <Dropdown.Toggle
