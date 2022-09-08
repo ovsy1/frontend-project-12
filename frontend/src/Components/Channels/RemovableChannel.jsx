@@ -18,7 +18,7 @@ function RemovableChannel({ channel }) {
         variant={buttonStyle}
         onClick={() => dispatch(setActiveChannel(id))}
       >
-        <span>#</span>
+        <span># </span>
         {name}
       </Button>
   </Nav.Item>
