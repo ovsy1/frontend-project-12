@@ -16,7 +16,7 @@ function Login() {
             <div className="card-body row p-5">
               <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
                 <img
-                  style={{ width: '300px', height: '300px' }}
+                  style={{ width: '200px', height: '200px' }}
                   src={avatarImages}
                   className="rounded-circle img-thumbnail mt-5"
                   alt={t('login.header')}
