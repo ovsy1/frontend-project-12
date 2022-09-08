@@ -30,9 +30,6 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
     <Nav.Item key={id} as="li" className="w-100">
       <Dropdown className="d-flex" as={ButtonGroup}>
         <Button
-          role="button"
-
-          type="button"
           className="w-100 rounded-0 text-start text-truncate my-1"
           variant={buttonStyle}
           onClick={() => dispatch(setActiveChannel(id))}
