@@ -13,7 +13,6 @@ function Chat() {
   const { status, error } = useSelector((state) => state.chats);
 
   const { getHeader } = useAuth();
-
   useEffect(() => {
     dispatch(loadChats(getHeader));
   }, []);
@@ -23,14 +22,12 @@ function Chat() {
       {error && <h2>{error}</h2>}
       {status === 'loading' && <Loader />}
       {status === 'received' && (
-        <Row className='h-100 bg-white flex-md-row'>
+        <Row className="h-100 bg-white flex-md-row">
           <Channels />
           <Messages />
         </Row>
-
       )}
     </Container>
   );
 }
-
 export default Chat;

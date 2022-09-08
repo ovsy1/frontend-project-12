@@ -16,8 +16,9 @@ function Login() {
             <div className="card-body row p-5">
               <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
                 <img
+                  style={{ width: '300px', height: '300px' }}
                   src={avatarImages}
-                  className="rounded-circle"
+                  className="rounded-circle img-thumbnail mt-5"
                   alt={t('login.header')}
                 />
               </div>
@@ -36,4 +37,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;

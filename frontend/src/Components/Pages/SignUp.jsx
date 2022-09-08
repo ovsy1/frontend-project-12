@@ -16,8 +16,9 @@ const SignUp = () => {
             <div className="card-body d-flex flex-column flex-md-row justify-content-around align-items-center p-5">
               <div>
                 <img
+                  style={{ width: '300px', height: '300px' }}
                   src={avatarImages}
-                  className="rounded-circle"
+                  className="rounded-circle img-thumbnail mt-5"
                   alt={t('signup.header')}
                 />
               </div>
@@ -36,4 +37,5 @@ const SignUp = () => {
     </div>
   );
 };
+
 export default SignUp;
