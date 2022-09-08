@@ -30,10 +30,10 @@ function AddModalForm({ setShowModal }) {
     },
     validationSchema: addChannelForm(channelsName),
     onSubmit: (values) => {
-      setShowModal(false);
       socket.newChannel(values, (response) => {
-        if (response.status !== 'ok') {
+        if (response.status === 'ok') {
           toast(t('toast.add'));
+          setShowModal(false);
         }
       });
     },
