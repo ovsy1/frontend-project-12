@@ -6,10 +6,10 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import validationForm from '../helpers/validation.js';
-import routes from '../routes.js';
-import { useAuth } from '../hooks/useAuth.js';
-import avatarImages from '../images/login.jpg';
+import validationForm from '../../helpers/validation.js';
+import routes from '../../routes.js';
+import { useAuth } from '../../hooks/useAuth.js';
+import avatarImages from '../../images/login.jpg';
 
 function Login() {
   const { toLogIn } = useAuth();
