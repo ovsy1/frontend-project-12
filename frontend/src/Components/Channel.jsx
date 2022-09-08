@@ -37,9 +37,7 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
           variant={buttonStyle}
           onClick={() => dispatch(setActiveChannel(id))}
         >
-          <span>#</span>
-          {' '}
-          {name}
+          <span>{`# ${name}`}</span>
         </Button>
         <Dropdown.Toggle
           aria-haspopup="true"

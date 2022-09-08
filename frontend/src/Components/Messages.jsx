@@ -13,7 +13,7 @@ import { useSocket } from '../hooks/useAuth.js';
 function Messages() {
   const { currentChannel, channels, messages } = useSelector((state) => state.chats);
   const nameCurrentChannel = channels.filter((c) => c.id === currentChannel)[0].name;
-  const counterChannel = messages.filter((m) => m.channelId === currentChannel).length;
+  const countCurrentChannel = messages.filter((m) => m.channelId === currentChannel).length;
   const socket = useSocket();
   const username = localStorage.getItem('username');
   const { t } = useTranslation();
@@ -54,14 +54,9 @@ function Messages() {
     <Col className='d-flex flex-column h-100 p-0'>
       <div className={'bg-white mx-0 mb-4 p-3 shadow-sm small'}>
         <p className='m-0'>
-          <b>
-            #
-            {' '}
-            {nameCurrentChannel || null}</b>
+        <b>{`# ${nameCurrentChannel || null}`}</b>
         </p>
-        <span className='text-mutted'>
-          {t('messages.messages', { count: counterChannel })}
-        </span>
+        <span className="text-muted">{t('messages.messages', { count: countCurrentChannel })}</span>
       </div>
       <MessageList />
       <div className='mt-auto px-5 py-3'>
