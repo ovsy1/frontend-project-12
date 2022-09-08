@@ -23,14 +23,14 @@ $ make install
 ```
 
 ### Technologies
-[React](https://reactjs.org/)
-[Redux](https://redux-toolkit.js.org/)
-[React-Bootstrap](https://react-bootstrap.github.io/)
-[React-Toastify](https://www.npmjs.com/package/react-toastify)
-[React-i18next](https://react.i18next.com/)
+[React](https://reactjs.org/) <br>
+[Redux](https://redux-toolkit.js.org/) <br>
+[React-Bootstrap](https://react-bootstrap.github.io/) <br>
+[React-Toastify](https://www.npmjs.com/package/react-toastify) <br>
+[React-i18next](https://react.i18next.com/) <br>
 
-[Formik](https://formik.org/)
-[Yup](https://github.com/jquense/yup)
-[Leo-profanity](https://github.com/jojoee/leo-profanity)
+[Formik](https://formik.org/) <br> 
+[Yup](https://github.com/jquense/yup) <br> 
+[Leo-profanity](https://github.com/jojoee/leo-profanity) <br>
 
-[Eslint](https://eslint.org/)
+[Eslint](https://eslint.org/) <br>
