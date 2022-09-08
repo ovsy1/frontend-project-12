@@ -1,51 +1,62 @@
 import React, { useRef, useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, FloatingLabel } from 'react-bootstrap';
 import { useFormik } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 
 import validationForm from '../../../helpers/validation.js';
+import { useSocket } from '../../../hooks/useAuth.js';
 
 function AddModalForm({ setShowModal }) {
-  // eslint-disable-next-line no-unused-vars
-  const dispatch = useDispatch();
   const textInput = useRef(null);
   const { t } = useTranslation();
   const { channels } = useSelector((state) => state.chats);
   const channelsName = channels.map((channel) => channel.name);
-
+  const socket = useSocket();
   const { addChannelForm } = validationForm();
 
   const handleClose = () => {
     setShowModal(false);
   };
 
+  useEffect(() => {
+    textInput.current.focus();
+  }, []);
+
   const formik = useFormik({
     initialValues: {
       name: '',
     },
     validationSchema: addChannelForm(channelsName),
+    onSubmit: (values) => {
+      socket.newChannel(values, (response) => {
+        if (response.status === 'ok') {
+          toast(t('toast.add'));
+          setShowModal(false);
+        }
+      });
+    },
   });
-
-  useEffect(() => {
-    textInput.current.focus();
-  }, []);
 
   return (
     <Form onSubmit={formik.handleSubmit}>
       <Form.Group>
-        <Form.Control
-          name="name"
-          data-testid="add-channel"
-          className="mb-2"
-          onChange={formik.handleChange}
-          ref={textInput}
-          disabled={formik.isSubmitting}
-          isInvalid={formik.errors.name}
-        />
-        <Form.Control.Feedback type="invalid">
-          {t(formik.errors.name)}
-        </Form.Control.Feedback>
+        <FloatingLabel label={t('modals.nameChannel')} hrmlFor="AddedForm">
+          <Form.Control
+            name="name"
+            id='AddedForm'
+            data-testid="add-channel"
+            className="mb-2"
+            onChange={formik.handleChange}
+            ref={textInput}
+            disabled={formik.isSubmitting}
+            isInvalid={formik.errors.name}
+          />
+          <Form.Control.Feedback type="invalid">
+            {t(formik.errors.name)}
+          </Form.Control.Feedback>
+        </FloatingLabel>
         <div className="d-flex justify-content-end">
           <Button
             onClick={handleClose}
