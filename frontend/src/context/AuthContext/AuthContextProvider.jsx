@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AuthContext from './AuthContext.js';
 
 function AuthContextProvider({ children }) {
-  const getUser = () => localStorage.getItem('username');
   const getToken = () => localStorage.getItem('token');
 
   const isAuthorized = () => {
@@ -35,7 +34,6 @@ function AuthContextProvider({ children }) {
       authStatus,
       toLogIn,
       toLogOut,
-      getUser,
       getToken,
       getHeader,
     }
