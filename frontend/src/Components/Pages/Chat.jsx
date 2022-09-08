@@ -4,8 +4,8 @@ import { Container, Row } from 'react-bootstrap';
 
 import { useAuth } from '../../hooks/useAuth.js';
 import { loadChats } from '../../store/features/chats-slice.js';
-import Channels from '../Channels.jsx';
-import Messages from '../Messages.jsx';
+import Channels from '../Channels/Channels.jsx';
+import Messages from '../Messages/Messages.jsx';
 import Loader from '../Loader.jsx';
 
 function Chat() {
