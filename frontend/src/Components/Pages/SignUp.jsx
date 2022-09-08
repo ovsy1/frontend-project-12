@@ -5,12 +5,12 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-import validationForm from '../helpers/validation.js';
-import avatarImages from '../images/signup.jpg';
-import routes from '../routes.js';
-import { useAuth } from '../hooks/useAuth.js';
+import validationForm from '../../helpers/validation.js';
+import avatarImages from '../../images/signup.jpg';
+import routes from '../../routes.js';
+import { useAuth } from '../../hooks/useAuth.js';
 
-function SignUp() {
+const SignUp = () => {
   const [registrationFailed, setRegistrationFailed] = useState(false);
   const { t } = useTranslation();
   const { toLogIn } = useAuth();
@@ -144,5 +144,5 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 export default SignUp;
