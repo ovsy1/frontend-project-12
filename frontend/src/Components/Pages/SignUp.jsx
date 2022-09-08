@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 import avatarImages from '../../images/signup.jpg';
 import SignUpForm from '../SignUpForm.jsx';
@@ -23,13 +22,6 @@ const SignUp = () => {
                 />
               </div>
               <SignUpForm/>
-            </div>
-            <div className="card-footer p-4">
-              <div className="text-center">
-                <span>{t('signup.hasAccount')}</span>
-                {' '}
-                <Link to={'/login'}>{t('signup.login')}</Link>
-              </div>
             </div>
           </div>
         </div>
