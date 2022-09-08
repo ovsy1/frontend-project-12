@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Nav } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { setActiveChannel } from '../store/features/chats-slice.js';
+import { setActiveChannel } from '../../store/features/chats-slice.js';
 
 function RemovableChannel({ channel }) {
   const dispatch = useDispatch();

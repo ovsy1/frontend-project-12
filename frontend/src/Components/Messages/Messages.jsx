@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import filter from 'leo-profanity';
 
 import MessageList from './MessageList.jsx';
-import { useSocket } from '../hooks/useAuth.js';
+import { useSocket } from '../../hooks/useAuth.js';
 
 function Messages() {
   const { currentChannel, channels, messages } = useSelector((state) => state.chats);

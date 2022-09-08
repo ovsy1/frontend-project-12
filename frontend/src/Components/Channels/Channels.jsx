@@ -6,9 +6,9 @@ import _ from 'lodash';
 
 import Channel from './Channel.jsx';
 import RemovableChannel from './RemovableChannel.jsx';
-import AddChannel from './Modal/Add/AddChannel.jsx';
-import RemoveChannel from './Modal/Remove/RemoveChannel.jsx';
-import RenameChannel from './Modal/Rename/RenameChannel.jsx';
+import AddChannel from '../Modal/Add/AddChannel.jsx';
+import RemoveChannel from '../Modal/Remove/RemoveChannel.jsx';
+import RenameChannel from '../Modal/Rename/RenameChannel.jsx';
 
 function Channels() {
   const [showModal, setShowModal] = useState(false);
