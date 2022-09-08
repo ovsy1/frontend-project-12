@@ -44,6 +44,7 @@ function AddModalForm({ setShowModal }) {
       <Form.Group>
         <FloatingLabel label={t('modals.nameChannel')} hrmlFor="AddedForm">
           <Form.Control
+            label={t('modals.nameChannel')}
             name="name"
             id='AddedForm'
             data-testid="add-channel"
