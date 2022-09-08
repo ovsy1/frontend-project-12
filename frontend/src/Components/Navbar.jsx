@@ -17,7 +17,7 @@ const Navbar = () => {
         <BootstrapNavbar.Brand as={Link} to='/'>{t('Home')}</BootstrapNavbar.Brand>
         {authStatus && <Button onClick={toLogOut}>{t('logout')}</Button>}
       </div>
-      <ToastContainer autoClose={3500} />
+      <ToastContainer autoClose={2500} />
     </BootstrapNavbar>
   );
 };
