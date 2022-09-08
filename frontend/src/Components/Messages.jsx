@@ -5,6 +5,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import { useSelector } from 'react-redux';
+import filter from 'leo-profanity';
 
 import MessageList from './MessageList.jsx';
 import { useSocket } from '../hooks/useAuth.js';
@@ -18,6 +19,11 @@ function Messages() {
   const { t } = useTranslation();
   const textInput = useRef(null);
 
+  filter.clearList();
+  filter.add(filter.getDictionary('en'));
+  filter.add(filter.getDictionary('ru'));
+  filter.add(filter.getDictionary('fr'));
+
   useEffect(() => {
     textInput.current.focus();
   });
@@ -27,17 +33,20 @@ function Messages() {
       message: '',
     },
     onSubmit: (values) => {
+      const filteredMessage = filter.check(values.message)
+        ? filter.clean(values.message)
+        : values.message;
       const newMessage = {
-        message: values.message,
+        message: filteredMessage,
         channelId: currentChannel,
         username,
       };
 
       socket.addNewMessage(newMessage, (response) => {
-        console.log(response);
+        if (response.status === 'ok') {
+          formik.resetForm();
+        }
       });
-
-      formik.resetForm();
     },
   });
 
