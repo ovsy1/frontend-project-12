@@ -32,11 +32,10 @@ function AddModalForm({ setShowModal }) {
     onSubmit: (values) => {
       socket.newChannel(values, (response) => {
         if (response.status !== 'ok') {
-          console.log(response);
+          setShowModal(false);
+          toast(t('toast.add'));
         }
       });
-      setShowModal(false);
-      toast(t('toast.add'));
     },
   });
 
