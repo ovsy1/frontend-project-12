@@ -3,6 +3,7 @@ import i18next from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Provider as ProviderRollbar, ErrorBoundary, LEVEL_WARN } from '@rollbar/react';
 
 import AuthContextProvider from './context/AuthContext/AuthContextProvider.jsx';
 import SocketContextProvider from './context/SocketContext/SocketContextProvider.jsx';
@@ -18,13 +19,26 @@ export default async (socket) => {
     fallbackLng: 'ru',
   });
 
+  const rollbarConfig = {
+    accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+    payload: {
+      environment: 'production',
+    },
+  };
+
   return (
     <I18nextProvider i18n={i18n}>
       <Provider store={store}>
         <BrowserRouter>
           <AuthContextProvider>
             <SocketContextProvider socket={socket}>
-              <App />
+              <ProviderRollbar config={rollbarConfig}>
+                <ErrorBoundary level={LEVEL_WARN}>
+                  <App />
+                </ErrorBoundary>
+              </ProviderRollbar>
             </SocketContextProvider>
           </AuthContextProvider>
         </BrowserRouter>
