@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/871a49b8a8500c0a0d94/maintainability)](https://codeclimate.com/github/ovsy1/frontend-project-12/maintainability)
 
 
-**Click [this](https://ovsy1.herokuapp.com/) to try
+### Click [this](https://ovsy1.herokuapp.com/) to try
 
 ### This is a simple version of Slack
 
