@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Chat from './Chat.jsx';
-import Login from './Login.jsx';
+import Chat from './Pages/Chat.jsx';
+import Login from './Pages/Login.jsx';
 import NotFoundPage from './NotFoundPage.jsx';
 import Navbar from './Navbar.jsx';
 import { useAuth } from '../hooks/useAuth.js';
-import SignUp from './SignUp.jsx';
+import SignUp from './Pages/SignUp.jsx';
 
 function App() {
   const { authStatus } = useAuth();
