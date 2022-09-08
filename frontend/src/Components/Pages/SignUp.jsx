@@ -16,7 +16,7 @@ const SignUp = () => {
             <div className="card-body d-flex flex-column flex-md-row justify-content-around align-items-center p-5">
               <div>
                 <img
-                  style={{ width: '300px', height: '300px' }}
+                  style={{ width: '200px', height: '200px' }}
                   src={avatarImages}
                   className="rounded-circle img-thumbnail mt-5"
                   alt={t('signup.header')}
