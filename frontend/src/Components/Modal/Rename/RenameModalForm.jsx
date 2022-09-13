@@ -56,7 +56,7 @@ function RenameModalForm({ setRenameModal }) {
           isInvalid={formik.errors.name}
           value={formik.values.name || targetModalName}
         />
-        <Form.Label htmlFor='AddedForm'>{t('modals.nameChannel')}</Form.Label>
+        <Form.Label>{t('modals.nameChannel')}</Form.Label>
         <Form.Control.Feedback type='invalid'>
           {t(formik.errors.name)}
         </Form.Control.Feedback>
