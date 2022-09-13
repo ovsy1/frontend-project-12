@@ -47,32 +47,32 @@ function RenameModalForm({ setRenameModal }) {
     <Form onSubmit={formik.handleSubmit}>
       <Form.Group>
         <Form.Control
-          name="name"
-          className="mb-2"
-          testid="rename-channel"
+          name='name'
+          className='mb-2'
+          testid='rename-channel'
           onChange={formik.handleChange}
           ref={textInput}
           disabled={formik.isSubmitting}
           isInvalid={formik.errors.name}
           value={formik.values.name || targetModalName}
         />
-        <label htmlFor="AddedForm">{t('modals.nameChannel')}</label>
-        <Form.Control.Feedback type="invalid">
+        <label className='visually-hidden' htmlFor='AddedForm'>{t('modals.nameChannel')}</label>
+        <Form.Control.Feedback type='invalid'>
           {t(formik.errors.name)}
         </Form.Control.Feedback>
-        <div className="d-flex justify-content-end">
+        <div className='d-flex justify-content-end'>
           <Button
             onClick={() => setRenameModal(false)}
-            type="button"
+            type='button'
             name={t('modals.cancel')}
-            className="me-2 btn btn-secondary"
+            className='me-2 btn btn-secondary'
           >
             {t('modals.cancel')}
           </Button>
           <Button
-            type="submit"
+            type='submit'
             name={t('modals.send')}
-            className="btn btn-primary"
+            className='btn btn-primary'
           >
             {t('modals.send')}
           </Button>
