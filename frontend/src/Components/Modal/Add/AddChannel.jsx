@@ -10,12 +10,12 @@ function AddChannel({ setShowModal, showModal }) {
   return (
     <Modal centered show={showModal} onHide={setShowModal}>
       <Modal.Header>
-        <Modal.Title className='h4'>{t('modals.addChannel')}</Modal.Title>
+        <Modal.Title className="h4">{t('modals.addChannel')}</Modal.Title>
         <Button
           onClick={() => setShowModal(false)}
-          aria-label='Close'
-          data-bs-dismiss='modal'
-          className='btn btn-close'
+          aria-label="Close"
+          data-bs-dismiss="modal"
+          className="btn btn-close"
         />
       </Modal.Header>
       <Modal.Body>
