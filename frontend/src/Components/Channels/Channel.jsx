@@ -4,16 +4,15 @@ import {
 } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { setActiveChannel } from '../../store/features/chats-slice.js';
 import { setModal } from '../../store/features/modal-slice.js';
 
 function Channel({ channel, setRemoveModal, setRenameModal }) {
   const dispatch = useDispatch();
   const { currentChannel } = useSelector((state) => state.chats);
-
   const { name, id } = channel;
   const { t } = useTranslation();
-
   const buttonStyle = currentChannel === id && 'primary';
 
   const handleShowRemove = () => {
@@ -42,13 +41,6 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
           className="flex-grow-0 my-1 rounded-end"
           variant={buttonStyle}
         />
-        <Dropdown.Toggle
-        split
-        variant={channel.id === currentChannel ? 'secondary' : 'light'}
-        className="flex-grow-0 text-end"
-        >
-          <span className='visually-hidden'>{t('channels.manage')}</span>
-        </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item
           onClick={handleShowRemove}
