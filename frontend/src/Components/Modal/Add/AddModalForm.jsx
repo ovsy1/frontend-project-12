@@ -52,7 +52,7 @@ function AddModalForm({ setShowModal }) {
           disabled={formik.isSubmitting}
           isInvalid={formik.errors.name}
         />
-        <label htmlFor="AddedForm">{t('modals.nameChannel')}</label>
+        <Form.Label htmlFor="AddedForm">{t('modals.nameChannel')}</Form.Label>
         <Form.Control.Feedback type="invalid">
           {t(formik.errors.name)}
         </Form.Control.Feedback>
