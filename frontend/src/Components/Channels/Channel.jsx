@@ -43,7 +43,7 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
         />
         <Dropdown.Toggle split className="flex-grow-0" variant={buttonStyle}>
               <span className="visually-hidden">{t('channels.manage')}</span>
-            </Dropdown.Toggle>
+          </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item
           onClick={handleShowRemove}
