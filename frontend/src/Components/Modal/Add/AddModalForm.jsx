@@ -42,22 +42,20 @@ function AddModalForm({ setShowModal }) {
   return (
     <Form onSubmit={formik.handleSubmit}>
       <Form.Group>
-        <Form.Label htmlFor='AddedForm'>
-          {t('modals.nameChannel')}
-        </Form.Label>
-          <Form.Control
-            name="name"
-            id='AddedForm'
-            data-testid="add-channel"
-            className="mb-2"
-            onChange={formik.handleChange}
-            ref={textInput}
-            disabled={formik.isSubmitting}
-            isInvalid={formik.errors.name}
-          />
-          <Form.Control.Feedback type="invalid">
-            {t(formik.errors.name)}
-          </Form.Control.Feedback>
+        <Form.Control
+          name="name"
+          id="AddedForm"
+          data-testid="add-channel"
+          className="mb-2"
+          onChange={formik.handleChange}
+          ref={textInput}
+          disabled={formik.isSubmitting}
+          isInvalid={formik.errors.name}
+        />
+        <label htmlFor="AddedForm">{t('modals.nameChannel')}</label>
+        <Form.Control.Feedback type="invalid">
+          {t(formik.errors.name)}
+        </Form.Control.Feedback>
         <div className="d-flex justify-content-end">
           <Button
             onClick={handleClose}
@@ -67,7 +65,11 @@ function AddModalForm({ setShowModal }) {
           >
             {t('modals.cancel')}
           </Button>
-          <Button type="submit" name={t('modals.send')} className="btn btn-primary">
+          <Button
+            type="submit"
+            name={t('modals.send')}
+            className="btn btn-primary"
+          >
             {t('modals.send')}
           </Button>
         </div>
