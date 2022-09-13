@@ -47,6 +47,7 @@ export default {
       name: 'Каналы',
       remove: 'Удалить',
       rename: 'Переименовать',
+      manage: 'Управление каналом',
     },
     messages: {
       placeholderName: 'Введите сообщение...',
