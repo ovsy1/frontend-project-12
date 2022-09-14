@@ -30,7 +30,7 @@ function SocketContextProvider({ children, socket }) {
   };
 
   return (
-    <SocketContext.Provider value={ socketValues }>{children}</SocketContext.Provider>
+    <SocketContext.Provider value={socketValues}>{children}</SocketContext.Provider>
   );
 }
 
