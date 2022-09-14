@@ -52,7 +52,7 @@ function RenameModalForm({ setRenameModal }) {
           onChange={formik.handleChange}
           ref={textInput}
           disabled={formik.isSubmitting}
-          isInvalid={formik.errors.name}
+          isInvalid={formik.errors.name && formik.touched.name}
           value={formik.values.name}
         />
         <Form.Label htmlFor='AddedForm'>{t('modals.nameChannel')}</Form.Label>
