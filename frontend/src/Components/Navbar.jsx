@@ -12,9 +12,9 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   return (
-    <BootstrapNavbar bg='white' expand='lg' className='shadow-sm'>
-      <div className='container'>
-      <BootstrapNavbar.Brand as={Link} to="/">Hexlet chat</BootstrapNavbar.Brand>
+    <BootstrapNavbar bg="white" expand="lg" className="shadow-sm">
+      <div className="container">
+        <BootstrapNavbar.Brand as={Link} to="/">Hexlet chat</BootstrapNavbar.Brand>
         {authStatus && <Button onClick={toLogOut}>{t('logout')}</Button>}
       </div>
       <ToastContainer autoClose={2500} />
