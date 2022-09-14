@@ -15,7 +15,7 @@ function Chat() {
   const { getHeader } = useAuth();
   useEffect(() => {
     dispatch(loadChats(getHeader));
-  }, []);
+  });
 
   return (
     <Container className="container h-100 my-4 overflow-hidden rounded shadow">
