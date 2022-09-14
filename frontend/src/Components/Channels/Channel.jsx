@@ -44,14 +44,10 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
           <span className="visually-hidden">{t('channels.manage')}</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item
-            onClick={handleShowRemove}
-          >
+          <Dropdown.Item onClick={handleShowRemove}>
             {t('channels.remove')}
           </Dropdown.Item>
-          <Dropdown.Item
-            onClick={handleShowRename}
-          >
+          <Dropdown.Item onClick={handleShowRename}>
             {t('channels.rename')}
           </Dropdown.Item>
         </Dropdown.Menu>

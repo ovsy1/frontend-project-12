@@ -3,10 +3,13 @@ import axios from 'axios';
 
 import routes from '../../routes.js';
 
-export const loadChats = createAsyncThunk('@@chats/load-chats', (configAuthorization) => {
-  const { mainPagePath } = routes;
-  return axios.get(mainPagePath(), configAuthorization);
-});
+export const loadChats = createAsyncThunk(
+  '@@chats/load-chats',
+  (configAuthorization) => {
+    const { mainPagePath } = routes;
+    return axios.get(mainPagePath(), configAuthorization);
+  },
+);
 
 const initialState = {
   channels: [],
@@ -37,11 +40,15 @@ const chatsSlice = createSlice({
       }
     },
     removeChannel: (state, action) => {
-      const channellList = state.channels.filter((channel) => channel.id !== action.payload.id);
+      const channellList = state.channels.filter(
+        (channel) => channel.id !== action.payload.id,
+      );
       if (state.currentChannel === action.payload.id) {
         state.currentChannel = 1;
       }
-      const messageList = state.messages.filter((m) => m.channelId !== action.payload.id);
+      const messageList = state.messages.filter(
+        (m) => m.channelId !== action.payload.id,
+      );
       state.channels = channellList;
       state.messages = messageList;
     },
@@ -78,7 +85,11 @@ const chatsSlice = createSlice({
 });
 
 export const {
-  setActiveChannel, addMessage, addChannel, removeChannel, renameChannel,
+  setActiveChannel,
+  addMessage,
+  addChannel,
+  removeChannel,
+  renameChannel,
 } = chatsSlice.actions;
 
 const chatsReducer = chatsSlice.reducer;

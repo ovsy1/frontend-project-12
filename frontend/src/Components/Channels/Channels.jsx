@@ -35,16 +35,38 @@ function Channels() {
           +
         </Button>
       </div>
-        <div id="channel-list">
-          <Nav fill as="ul" variant="pills" className="flex-column px-2">
-            {channels.map((channel) => (channel.removable
-              ? <Channel key={_.uniqueId('Channel_')} channel={channel} setRemoveModal={setRemoveModal} setRenameModal={setRenameModal} />
-              : <RemovableChannel key={_.uniqueId('RemovableChannel')} channel={channel} />))}
-          </Nav>
-        </div>
-      {showModal && <AddChannel setShowModal={setShowModal} showModal={showModal} />}
-      {removeModal && <RemoveChannel removeModal={removeModal} setRemoveModal={setRemoveModal} />}
-      {renameModal && <RenameChannel renameModal={renameModal} setRenameModal={setRenameModal} />}
+      <div id="channel-list">
+        <Nav fill as="ul" variant="pills" className="flex-column px-2">
+          {channels.map((channel) => (channel.removable ? (
+              <Channel
+                key={_.uniqueId('Channel_')}
+                channel={channel}
+                setRemoveModal={setRemoveModal}
+                setRenameModal={setRenameModal}
+              />
+          ) : (
+              <RemovableChannel
+                key={_.uniqueId('RemovableChannel')}
+                channel={channel}
+              />
+          )))}
+        </Nav>
+      </div>
+      {showModal && (
+        <AddChannel setShowModal={setShowModal} showModal={showModal} />
+      )}
+      {removeModal && (
+        <RemoveChannel
+          removeModal={removeModal}
+          setRemoveModal={setRemoveModal}
+        />
+      )}
+      {renameModal && (
+        <RenameChannel
+          renameModal={renameModal}
+          setRenameModal={setRenameModal}
+        />
+      )}
     </Col>
   );
 }

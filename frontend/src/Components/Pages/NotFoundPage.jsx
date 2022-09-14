@@ -7,10 +7,13 @@ function NotFoundPage() {
 
   return (
     <div className="text-center h-100 mt-5">
-      <img alt={t('notFound.header')} className="img-thumbnail" style={{ height: '700px' }} src={notFoundImg} />
-      <h1 className="h4 text-muted">
-        {t('notFound.header')}
-      </h1>
+      <img
+        alt={t('notFound.header')}
+        className="img-thumbnail"
+        style={{ height: '700px' }}
+        src={notFoundImg}
+      />
+      <h1 className="h4 text-muted">{t('notFound.header')}</h1>
       <p className="text-muted">
         {t('notFound.message')}
         <a href="/">{t('notFound.linkText')}</a>

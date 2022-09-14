@@ -3,7 +3,10 @@ import { useDispatch } from 'react-redux';
 
 import SocketContext from './SocketContext';
 import {
-  addMessage, addChannel, removeChannel, renameChannel,
+  addMessage,
+  addChannel,
+  removeChannel,
+  renameChannel,
 } from '../../store/features/chats-slice.js';
 
 function SocketContextProvider({ children, socket }) {
@@ -30,7 +33,9 @@ function SocketContextProvider({ children, socket }) {
   };
 
   return (
-    <SocketContext.Provider value={socketValues}>{children}</SocketContext.Provider>
+    <SocketContext.Provider value={socketValues}>
+      {children}
+    </SocketContext.Provider>
   );
 }
 

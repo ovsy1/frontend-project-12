@@ -29,15 +29,15 @@ function AuthContextProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={
-      {
+    <AuthContext.Provider
+      value={{
         authStatus,
         toLogIn,
         toLogOut,
         getToken,
         getHeader,
-      }
-    }>
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

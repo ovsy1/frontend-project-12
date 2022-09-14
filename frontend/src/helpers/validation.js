@@ -10,20 +10,24 @@ function validationForm() {
   });
 
   const signupForm = yup.object({
-    username: yup.string()
+    username: yup
+      .string()
       .required(t('signup.required'))
       .min(3, t('signup.usernameConstraints'))
       .max(20, t('signup.usernameConstraints')),
-    password: yup.string()
+    password: yup
+      .string()
       .required(t('signup.required'))
       .min(6, t('signup.passMin')),
-    confirmPassword: yup.string()
+    confirmPassword: yup
+      .string()
       .oneOf([yup.ref('password'), null], t('signup.mustMatch'))
       .required(t('signup.required')),
   });
 
   const addChannelForm = (channels) => yup.object().shape({
-    name: yup.string()
+    name: yup
+      .string()
       .trim()
       .min(3, 'errors.channelMinLength')
       .max(20, 'errors.channelMaxLength')

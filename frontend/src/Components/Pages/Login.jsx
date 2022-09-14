@@ -26,8 +26,7 @@ function Login() {
             </div>
             <div className="card-footer p-4">
               <div className="text-center">
-                <span>{t('login.newToChat')}</span>
-                {' '}
+                <span>{t('login.newToChat')}</span>{' '}
                 <Link to={'/signup'}>{t('login.signup')}</Link>
               </div>
             </div>
