@@ -21,7 +21,7 @@ const SignUp = () => {
                   alt={t('signup.header')}
                 />
               </div>
-              <SignUpForm/>
+              <SignUpForm />
             </div>
           </div>
         </div>
