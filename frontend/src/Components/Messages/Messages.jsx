@@ -51,43 +51,43 @@ function Messages() {
   });
 
   return (
-    <Col className='d-flex flex-column h-100 p-0'>
-      <div className={'bg-white mx-0 mb-4 p-3 shadow-sm small'}>
-        <p className='m-0'>
-        <b>{`# ${nameCurrentChannel || null}`}</b>
+    <Col className="d-flex flex-column h-100 p-0">
+      <div className="bg-white mx-0 mb-4 p-3 shadow-sm small">
+        <p className="m-0">
+          <b>{`# ${nameCurrentChannel || null}`}</b>
         </p>
         <span className="text-muted">{t('messages.messages', { count: countCurrentChannel })}</span>
       </div>
       <MessageList />
-      <div className='mt-auto px-5 py-3'>
-      <Form onSubmit={formik.handleSubmit} className='form-label'>
-      <Row className='align-items-center'>
-        <Col className='p-0'>
-          <FormControl
-            ref={textInput}
-            data-testid='new-message'
-            aria-label={t('messages.ariaLabel')}
-            placeholder={t('messages.placeholderName')}
-            name='message'
-            type='text'
-            value={formik.values.message}
-            onChange={formik.handleChange}
-            disabled={formik.isSubmitting}
-          />
-        </Col>
-        <Col xs='auto'>
-          <Button
-            role='button'
-            className='btn btn-group-vertical'
-            type='submit'
-            name={t('messages.send')}
-            disabled={formik.values.message === '' || formik.isSubmitting}
-          >
-            {t('messages.send')}
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+      <div className="mt-auto px-5 py-3">
+        <Form onSubmit={formik.handleSubmit} className="form-label">
+        <Row className="align-items-center">
+          <Col className="p-0">
+            <FormControl
+              ref={textInput}
+              data-testid="new-message"
+              aria-label={t('messages.ariaLabel')}
+              placeholder={t('messages.placeholderName')}
+              name="message"
+              type="text"
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              disabled={formik.isSubmitting}
+            />
+          </Col>
+          <Col xs="auto">
+            <Button
+              role="button"
+              className="btn btn-group-vertical"
+              type="submit"
+              name={t('messages.send')}
+              disabled={formik.values.message === '' || formik.isSubmitting}
+            >
+              {t('messages.send')}
+            </Button>
+          </Col>
+        </Row>
+        </Form>
       </div>
     </Col>
   );
