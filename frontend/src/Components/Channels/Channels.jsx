@@ -38,17 +38,17 @@ function Channels() {
       <div id="channel-list">
         <Nav fill as="ul" variant="pills" className="flex-column px-2">
           {channels.map((channel) => (channel.removable ? (
-              <Channel
-                key={_.uniqueId('Channel_')}
-                channel={channel}
-                setRemoveModal={setRemoveModal}
-                setRenameModal={setRenameModal}
-              />
+            <Channel
+              key={_.uniqueId('Channel_')}
+              channel={channel}
+              setRemoveModal={setRemoveModal}
+              setRenameModal={setRenameModal}
+            />
           ) : (
-              <RemovableChannel
-                key={_.uniqueId('RemovableChannel')}
-                channel={channel}
-              />
+            <RemovableChannel
+              key={_.uniqueId('RemovableChannel')}
+              channel={channel}
+            />
           )))}
         </Nav>
       </div>

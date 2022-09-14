@@ -23,7 +23,8 @@ function MessageList() {
         .map((message) => (
           <div key={message.id} className="text-break mb-2">
             <b>{message.username}</b>
-            {':'} {message.message}
+            {':'}
+            {message.message}
             <div ref={messageEndRef} />
           </div>
         ))}
