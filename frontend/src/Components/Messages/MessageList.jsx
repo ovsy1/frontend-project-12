@@ -14,18 +14,19 @@ function MessageList() {
   }, [messages]);
 
   return (
-  <div
-    className="h-100 chat-messages overflow-auto text-break px-5"
-    id="messages-box"
-  >
+    <div
+      className="h-100 chat-messages overflow-auto text-break px-5"
+      id="messages-box"
+    >
     {
       messages.filter((message) => message.channelId === currentChannel).map((message) => <div key={message.id} className="text-break mb-2">
         <b>{message.username}</b>
-        {':'} {message.message}
+        {':'}
+        {message.message}
         <div ref={messageEndRef} />
         </div>)
     }
-  </div>
+    </div>
   );
 }
 
