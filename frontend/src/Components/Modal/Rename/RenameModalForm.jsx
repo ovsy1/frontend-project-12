@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useFormik } from 'formik';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
@@ -9,9 +9,7 @@ import validationForm from '../../../helpers/validation.js';
 import { useSocket } from '../../../hooks/useAuth.js';
 
 function RenameModalForm({ setRenameModal }) {
-  // eslint-disable-next-line no-unused-vars
-  const dispatch = useDispatch();
-  const { targetModalID, targetModalName } = useSelector((state) => state.modal);
+  const { targetModalID } = useSelector((state) => state.modal);
   const { channels } = useSelector((state) => state.chats);
   const channelsName = channels.map((channel) => channel.name);
   const textInput = useRef(null);
@@ -55,7 +53,7 @@ function RenameModalForm({ setRenameModal }) {
           ref={textInput}
           disabled={formik.isSubmitting}
           isInvalid={formik.errors.name}
-          value={formik.values.name || targetModalName}
+          value={formik.values.name}
         />
         <Form.Label htmlFor='AddedForm'>{t('modals.nameChannel')}</Form.Label>
         <Form.Control.Feedback type='invalid'>
