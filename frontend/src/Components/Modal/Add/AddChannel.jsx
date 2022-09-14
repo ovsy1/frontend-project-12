@@ -19,7 +19,7 @@ function AddChannel({ setShowModal, showModal }) {
         />
       </Modal.Header>
       <Modal.Body>
-        <AddModalForm setShowModal={setShowModal}/>
+        <AddModalForm setShowModal={setShowModal} />
       </Modal.Body>
     </Modal>
   );
