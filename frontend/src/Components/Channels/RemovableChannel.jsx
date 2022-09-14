@@ -21,7 +21,7 @@ function RemovableChannel({ channel }) {
         <span># </span>
         {name}
       </Button>
-  </Nav.Item>
+    </Nav.Item>
   );
 }
 
