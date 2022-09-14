@@ -41,7 +41,6 @@ function Channel({ channel, setRemoveModal, setRenameModal }) {
           className="flex-grow-0 my-1 rounded-end"
           variant={buttonStyle}
         />
-          <span className="visually-hidden">{t('channels.manage')}</span>
         <Dropdown.Menu>
           <Dropdown.Item
           onClick={handleShowRemove}
