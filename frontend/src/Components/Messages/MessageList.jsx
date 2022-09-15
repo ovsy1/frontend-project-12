@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable react/jsx-closing-tag-location */
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -21,13 +22,12 @@ function MessageList() {
       id="messages-box"
     >
       {
-        messages.filter((message) => message.channelId === currentChannel)
-          .map((message) => <div key={message.id} className="text-break mb-2">
+        messages.filter((message) => message.channelId === currentChannel).map((message) => <div key={message.id} className="text-break mb-2">
           <b>{message.username}</b>
           {':'}
           {message.message}
           <div ref={messageEndRef} />
-          </div>)
+        </div>)
       }
     </div>
   );
