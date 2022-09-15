@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -22,7 +21,7 @@ function MessageList() {
       {(
         messages.filter((message) => message.channelId === currentChannel).map((message) => <div key={message.id} className="text-break mb-2">
           <b>{message.username}</b>
-          ':'
+          {':'}
           {message.message}
           <div ref={messageEndRef} />
         </div>)
