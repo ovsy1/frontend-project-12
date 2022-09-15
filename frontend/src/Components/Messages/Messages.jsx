@@ -61,32 +61,32 @@ function Messages() {
       <MessageList />
       <div className="mt-auto px-5 py-3">
         <Form onSubmit={formik.handleSubmit} className="form-label">
-        <Row className="align-items-center">
-        <Col className="p-0">
-          <FormControl
-            ref={textInput}
-            data-testid="new-message"
-            aria-label={t('messages.ariaLabel')}
-            placeholder={t('messages.placeholderName')}
-            name="message"
-            type="text"
-            value={formik.values.message}
-            onChange={formik.handleChange}
-            disabled={formik.isSubmitting}
-          />
-        </Col>
-        <Col xs="auto">
-          <Button
-            role="button"
-            className="btn btn-group-vertical"
-            type="submit"
-            name={t('messages.send')}
-            disabled={formik.values.message === '' || formik.isSubmitting}
-          >
-            {t('messages.send')}
-          </Button>
-        </Col>
-        </Row>
+          <Row className="align-items-center">
+            <Col className="p-0">
+              <FormControl
+              ref={textInput}
+              data-testid="new-message"
+              aria-label={t('messages.ariaLabel')}
+              placeholder={t('messages.placeholderName')}
+              name="message"
+              type="text"
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              disabled={formik.isSubmitting}
+              />
+            </Col>
+            <Col xs="auto">
+              <Button
+              role="button"
+              className="btn btn-group-vertical"
+              type="submit"
+              name={t('messages.send')}
+              disabled={formik.values.message === '' || formik.isSubmitting}
+              >
+                {t('messages.send')}
+              </Button>
+            </Col>
+          </Row>
         </Form>
       </div>
     </Col>
