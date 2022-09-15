@@ -54,14 +54,14 @@ function Messages() {
     <Col className="d-flex flex-column h-100 p-0">
       <div className="bg-white mx-0 mb-4 p-3 shadow-sm small">
         <p className="m-0">
-        <b>{`# ${nameCurrentChannel || null}`}</b>
+          <b>{`# ${nameCurrentChannel || null}`}</b>
         </p>
         <span className="text-muted">{t('messages.messages', { count: countCurrentChannel })}</span>
       </div>
       <MessageList />
       <div className="mt-auto px-5 py-3">
-      <Form onSubmit={formik.handleSubmit} className="form-label">
-      <Row className="align-items-center">
+        <Form onSubmit={formik.handleSubmit} className="form-label">
+        <Row className="align-items-center">
         <Col className="p-0">
           <FormControl
             ref={textInput}
@@ -79,15 +79,15 @@ function Messages() {
           <Button
             role="button"
             className="btn btn-group-vertical"
-            type='submit'
+            type="submit"
             name={t('messages.send')}
             disabled={formik.values.message === '' || formik.isSubmitting}
           >
             {t('messages.send')}
           </Button>
         </Col>
-      </Row>
-    </Form>
+        </Row>
+        </Form>
       </div>
     </Col>
   );
