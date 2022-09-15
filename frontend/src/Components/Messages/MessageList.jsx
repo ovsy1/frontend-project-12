@@ -21,12 +21,13 @@ function MessageList() {
       id="messages-box"
     >
       {
-        messages.filter((message) => message.channelId === currentChannel).map((message) => <div key={message.id} className="text-break mb-2">
+        messages.filter((message) => message.channelId === currentChannel)
+          .map((message) => <div key={message.id} className="text-break mb-2">
           <b>{message.username}</b>
           {':'}
           {message.message}
           <div ref={messageEndRef} />
-        </div>)
+          </div>)
       }
     </div>
   );
