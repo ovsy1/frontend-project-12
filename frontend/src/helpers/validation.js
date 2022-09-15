@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
 
 function validationForm() {
-  const { t } = useTranslation();
+  const { t } = useTranslation(); // eslint-disable-line
 
   const loginForm = yup.object({
     username: yup.string().trim().required(t('errors.loginErr')),
