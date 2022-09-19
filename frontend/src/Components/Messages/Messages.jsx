@@ -28,9 +28,7 @@ function Messages() {
       message: '',
     },
     onSubmit: (values) => {
-      const filteredMessage = filter.check(values.message)
-        ? filter.clean(values.message)
-        : values.message;
+      const filteredMessage = filter.clean(values.message);
       const newMessage = {
         message: filteredMessage,
         channelId: currentChannel,
