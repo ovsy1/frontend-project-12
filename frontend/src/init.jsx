@@ -9,6 +9,7 @@ import {
   LEVEL_WARN,
 } from '@rollbar/react';
 
+import filter from 'leo-profanity';
 import AuthContextProvider from './context/AuthContext/AuthContextProvider.jsx';
 import SocketContextProvider from './context/SocketContext/SocketContextProvider.jsx';
 import store from './store/store.js';
@@ -17,6 +18,11 @@ import App from './Components/App.jsx';
 
 export default async (socket) => {
   const i18n = i18next.createInstance();
+
+  filter.clearList();
+  filter.add(filter.getDictionary('en'));
+  filter.add(filter.getDictionary('ru'));
+  filter.add(filter.getDictionary('fr'));
 
   await i18n.use(initReactI18next).init({
     resources: languages,
@@ -30,6 +36,7 @@ export default async (socket) => {
     payload: {
       environment: 'production',
     },
+
   };
 
   return (

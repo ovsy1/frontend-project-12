@@ -19,11 +19,6 @@ function Messages() {
   const { t } = useTranslation();
   const textInput = useRef(null);
 
-  filter.clearList();
-  filter.add(filter.getDictionary('en'));
-  filter.add(filter.getDictionary('ru'));
-  filter.add(filter.getDictionary('fr'));
-
   useEffect(() => {
     textInput.current.focus();
   });
