@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, Col, Nav } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import _ from 'lodash';
 
 import Channel from './Channel.jsx';
 import RemovableChannel from './RemovableChannel.jsx';
@@ -39,14 +38,14 @@ function Channels() {
         <Nav fill as="ul" variant="pills" className="flex-column px-2">
           {channels.map((channel) => (channel.removable ? (
             <Channel
-              key={_.uniqueId('Channel_')}
+              key={('Channel_')}
               channel={channel}
               setRemoveModal={setRemoveModal}
               setRenameModal={setRenameModal}
             />
           ) : (
             <RemovableChannel
-              key={_.uniqueId('RemovableChannel')}
+              key={('RemovableChannel')}
               channel={channel}
             />
           )))}
