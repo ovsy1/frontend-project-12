@@ -38,14 +38,14 @@ function Channels() {
         <Nav fill as="ul" variant="pills" className="flex-column px-2">
           {channels.map((channel) => (channel.removable ? (
             <Channel
-              key={('Channel_')}
+              key='Channel_'
               channel={channel}
               setRemoveModal={setRemoveModal}
               setRenameModal={setRenameModal}
             />
           ) : (
             <RemovableChannel
-              key={('RemovableChannel')}
+              key='RemovableChannel'
               channel={channel}
             />
           )))}
