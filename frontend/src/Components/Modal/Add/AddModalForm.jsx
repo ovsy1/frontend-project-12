@@ -6,14 +6,14 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
 import validationForm from '../../../helpers/validation.js';
-import { useSocket } from '../../../hooks/useAuth.js';
+import { useApi } from '../../../hooks/useAuth.js';
 
 function AddModalForm({ setShowModal }) {
   const textInput = useRef(null);
   const { t } = useTranslation();
   const { channels } = useSelector((state) => state.chats);
   const channelsName = channels.map((channel) => channel.name);
-  const socket = useSocket();
+  const socket = useApi();
   const { addChannelForm } = validationForm();
 
   const handleClose = () => {

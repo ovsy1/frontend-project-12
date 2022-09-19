@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 
-import { useSocket } from '../../../hooks/useAuth.js';
+import { useApi } from '../../../hooks/useAuth.js';
 
 function RemoveChannel({ removeModal, setRemoveModal }) {
   const { t } = useTranslation();
-  const socket = useSocket();
+  const socket = useApi();
   const { targetModalID } = useSelector((state) => state.modal);
 
   const handleSubmit = (e) => {

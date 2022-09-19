@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
 import validationForm from '../../../helpers/validation.js';
-import { useSocket } from '../../../hooks/useAuth.js';
+import { useApi } from '../../../hooks/useAuth.js';
 
 function RenameModalForm({ setRenameModal }) {
   const { targetModalID } = useSelector((state) => state.modal);
@@ -15,7 +15,7 @@ function RenameModalForm({ setRenameModal }) {
   const textInput = useRef(null);
   const { t } = useTranslation();
   const { addChannelForm } = validationForm();
-  const socket = useSocket();
+  const socket = useApi();
 
   useEffect(() => {
     textInput.current.select();

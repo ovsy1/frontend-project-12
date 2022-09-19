@@ -8,13 +8,13 @@ import { useSelector } from 'react-redux';
 import filter from 'leo-profanity';
 
 import MessageList from './MessageList.jsx';
-import { useSocket } from '../../hooks/useAuth.js';
+import { useApi } from '../../hooks/useAuth.js';
 
 function Messages() {
   const { currentChannel, channels, messages } = useSelector((state) => state.chats);
   const nameCurrentChannel = channels.filter((c) => c.id === currentChannel)[0].name;
   const countCurrentChannel = messages.filter((m) => m.channelId === currentChannel).length;
-  const socket = useSocket();
+  const socket = useApi();
   const username = localStorage.getItem('username');
   const { t } = useTranslation();
   const textInput = useRef(null);
